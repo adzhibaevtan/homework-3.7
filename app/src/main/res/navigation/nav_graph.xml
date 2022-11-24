@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/rickAndMortyListFragment">
+
+    <fragment
+        android:id="@+id/rickAndMortyListFragment"
+        android:name="com.rick_and_morty.homework_37.ui.fragments.RickAndMortyListFragment"
+        android:label="fragment_rick_and_morty_list"
+        tools:layout="@layout/fragment_rick_and_morty_list">
+        <action
+            android:id="@+id/action_rickAndMortyListFragment_to_itemFragment"
+            app:destination="@id/itemFragment"
+            app:popUpTo="@id/rickAndMortyListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemFragment"
+        android:name="com.rick_and_morty.homework_37.ui.fragments.ItemFragment"
+        android:label="fragment_item"
+        tools:layout="@layout/fragment_item">
+        <argument
+            android:name="character"
+            app:argType="com.rick_and_morty.homework_37.ui.model.RickAndMortyCharacter" />
+    </fragment>
+</navigation>
